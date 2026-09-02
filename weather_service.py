@@ -62,3 +62,23 @@ def get_weather_alerts(temperature, precipitation, wind_speed, uv_index):
         alerts.append("High UV level")
 
     return alerts
+def get_recommendation(profile, temperature, precipitation, wind_speed, uv_index):
+
+    if profile == "farmer":
+        if precipitation >= 60:
+            return "Rain expected. Avoid irrigation."
+        return "Weather looks suitable for farming."
+
+    elif profile == "traveler":
+        if precipitation >= 60:
+            return "Rain expected. Carry an umbrella."
+        return "Weather looks suitable for travel."
+
+    elif profile == "outdoor":
+        if uv_index >= 8 or temperature >= 35:
+            return "High heat or UV. Avoid long outdoor activities."
+        if wind_speed >= 40:
+            return "Strong winds. Outdoor activities may be risky."
+        return "Weather looks suitable for outdoor activities."
+
+    return "No specific recommendation."
