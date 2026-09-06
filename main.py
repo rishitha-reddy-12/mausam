@@ -19,6 +19,7 @@ def weather(latitude: float, longitude: float, profile: str = "traveler"):
     humidity = weather_data["humidity"][0]
     wind_speed = weather_data["wind_speed"][0]
     uv_index = weather_data["uv_index"][0]
+    soil_moisture = weather_data["soil_moisture"][0]
 
     alerts = get_weather_alerts(
         temperature,
@@ -41,6 +42,7 @@ def weather(latitude: float, longitude: float, profile: str = "traveler"):
         "humidity": humidity,
         "wind_speed": wind_speed,
         "uv_index": uv_index,
+        "soil_moisture": soil_moisture,
         "alerts": alerts,
         "recommendation": recommendation
     }
