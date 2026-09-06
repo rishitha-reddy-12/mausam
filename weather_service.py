@@ -21,7 +21,8 @@ def get_weather(latitude, longitude):
             "precipitation",
             "relative_humidity_2m",
             "wind_speed_10m",
-            "uv_index"
+            "uv_index",
+            "soil_moisture_0_to_7cm"
         ],
         "forecast_days": 1
     }
@@ -37,13 +38,15 @@ def get_weather(latitude, longitude):
     humidity = hourly.Variables(2).ValuesAsNumpy()
     wind_speed = hourly.Variables(3).ValuesAsNumpy()
     uv_index = hourly.Variables(4).ValuesAsNumpy()
+    soil_moisture = hourly.Variables(5).ValuesAsNumpy()
 
     return {
         "temperature": temperature.tolist(),
         "precipitation": precipitation.tolist(),
         "humidity": humidity.tolist(),
         "wind_speed": wind_speed.tolist(),
-        "uv_index": uv_index.tolist()
+        "uv_index": uv_index.tolist(),
+        "soil_moisture": soil_moisture.tolist()
     }
 def get_weather_alerts(temperature, precipitation, wind_speed, uv_index):
 
