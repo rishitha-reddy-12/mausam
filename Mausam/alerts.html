@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alerts | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item active"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="alerts-page">
+
+        <div class="alerts-container">
+
+            <!-- HEADING -->
+
+            <section class="alerts-heading">
+
+                <span>WEATHER ALERTS</span>
+
+                <h1>Stay informed</h1>
+
+                <p>
+                    Important weather conditions and changes
+                    that may affect your plans.
+                </p>
+
+            </section>
+
+
+            <!-- ALERT SUMMARY -->
+
+            <section class="alert-summary">
+
+                <div class="alert-summary-item">
+
+                    <strong id="activeAlertCount">
+                        2
+                    </strong>
+
+                    <span>
+                        Active alerts
+                    </span>
+
+                </div>
+
+
+                <div class="alert-summary-item">
+
+                    <strong>
+                        1
+                    </strong>
+
+                    <span>
+                        High priority
+                    </span>
+
+                </div>
+
+
+                <div class="alert-summary-item">
+
+                    <strong>
+                        1
+                    </strong>
+
+                    <span>
+                        Advisory
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACTIVE ALERTS -->
+
+            <section class="alerts-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>ACTIVE ALERTS</span>
+
+                        <h2>Current weather warnings</h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HIGH PRIORITY ALERT -->
+
+                <article class="alert-card high-alert">
+
+                    <div class="alert-card-icon">
+                        !
+                    </div>
+
+
+                    <div class="alert-card-content">
+
+                        <div class="alert-card-top">
+
+                            <span class="alert-priority">
+                                HIGH PRIORITY
+                            </span>
+
+                            <span class="alert-time">
+                                Updated 10 min ago
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Heavy rain expected
+                        </h3>
+
+
+                        <p>
+                            Rain may become intense in your area
+                            during the evening. Travel carefully
+                            and avoid waterlogged roads.
+                        </p>
+
+
+                        <div class="alert-details">
+
+                            <span>
+                                Rain probability: 70%
+                            </span>
+
+                            <span>
+                                Expected: 6 PM – 8 PM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ADVISORY ALERT -->
+
+                <article class="alert-card advisory-alert">
+
+                    <div class="alert-card-icon">
+                        i
+                    </div>
+
+
+                    <div class="alert-card-content">
+
+                        <div class="alert-card-top">
+
+                            <span class="alert-priority">
+                                ADVISORY
+                            </span>
+
+                            <span class="alert-time">
+                                Updated 25 min ago
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            High humidity
+                        </h3>
+
+
+                        <p>
+                            Humidity is expected to remain high.
+                            Outdoor activities may feel more
+                            uncomfortable than usual.
+                        </p>
+
+
+                        <div class="alert-details">
+
+                            <span>
+                                Humidity: 78%
+                            </span>
+
+                            <span>
+                                Valid: Today
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- PERSONALIZED ALERTS -->
+
+            <section class="alerts-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>PERSONALIZED ALERTS</span>
+
+                        <h2>Relevant to your selected user type</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="personalized-alert-card">
+
+                    <div>
+
+                        <span>
+                            COMMUTER
+                        </span>
+
+                        <h3>
+                            Rain may affect your evening journey
+                        </h3>
+
+                        <p>
+                            Consider starting earlier or keeping
+                            an alternate route available.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        onclick="window.location.href='journey.html'"
+                    >
+                        View Journey
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTIFICATION HISTORY -->
+
+            <section class="alerts-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>NOTIFICATION HISTORY</span>
+
+                        <h2>Recent updates</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-history">
+
+                    <div class="notification-history-item">
+
+                        <div class="notification-status-dot"></div>
+
+                        <div>
+
+                            <strong>
+                                Rain probability increased
+                            </strong>
+
+                            <p>
+                                Rain probability changed from
+                                40% to 70%.
+                            </p>
+
+                            <small>
+                                10 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-history-item">
+
+                        <div class="notification-status-dot"></div>
+
+                        <div>
+
+                            <strong>
+                                Weather conditions updated
+                            </strong>
+
+                            <p>
+                                Evening forecast has been updated.
+                            </p>
+
+                            <small>
+                                25 minutes ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-history-item">
+
+                        <div class="notification-status-dot"></div>
+
+                        <div>
+
+                            <strong>
+                                Humidity increased
+                            </strong>
+
+                            <p>
+                                Humidity increased to 78%.
+                            </p>
+
+                            <small>
+                                1 hour ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ALERT SETTINGS -->
+
+            <section class="alert-settings-card">
+
+                <div>
+
+                    <span>
+                        NOTIFICATION PREFERENCES
+                    </span>
+
+                    <h2>
+                        Keep receiving important updates
+                    </h2>
+
+                    <p>
+                        Weather changes, journey risks and
+                        important alerts will be shown here.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    onclick="window.location.href='settings.html'"
+                >
+                    Manage Notifications
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script src="alerts.js"></script>
+
+</body>
+
+</html>

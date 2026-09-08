@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div>
+            <span>MAUSAM</span>
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
+            </a>
+
+            <a href="journey.html" class="nav-item">
+                <span class="nav-icon">↗</span>
+                <span>Journey</span>
+            </a>
+
+            <a href="forecast.html" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Forecast</span>
+            </a>
+
+            <a href="alerts.html" class="nav-item">
+                <span class="nav-icon">!</span>
+                <span>Alerts</span>
+            </a>
+
+            <a href="nearby.html" class="nav-item">
+                <span class="nav-icon">⌖</span>
+                <span>Nearby</span>
+            </a>
+
+            <a href="saved.html" class="nav-item">
+                <span class="nav-icon">☆</span>
+                <span>Saved Places</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="nav-item active">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="personalize.html" class="nav-item">
+                <span class="nav-icon">◉</span>
+                <span>Personalize</span>
+            </a>
+
+            <a href="index.html" class="logout-button">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="settings-page">
+
+        <div class="settings-container">
+
+
+            <section class="settings-card">
+
+
+                <!-- PAGE HEADING -->
+
+                <div class="profile-page-heading">
+
+                    <span>SETTINGS</span>
+
+                    <h1>Preferences</h1>
+
+                    <p>
+                        Manage your Mausam language and application preferences.
+                    </p>
+
+                </div>
+
+
+                <!-- LANGUAGE -->
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <h3>Language</h3>
+
+                        <p>
+                            Choose the language used throughout Mausam.
+                        </p>
+
+                    </div>
+
+
+                    <select id="languageSelect">
+
+                        <option value="en">
+                            English
+                        </option>
+
+                        <option value="te">
+                            Telugu
+                        </option>
+
+                        <option value="hi">
+                            Hindi
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="settings-divider"></div>
+
+                <!-- THEME -->
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <h3>Theme</h3>
+
+                        <p>
+                            Choose the appearance used across Mausam.
+                        </p>
+
+                    </div>
+
+
+                    <select id="themeSelect">
+
+                        <option value="dark">
+                            Dark
+                        </option>
+
+                        <option value="light">
+                            Light
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="settings-divider"></div>
+
+
+                <!-- TEMPERATURE UNIT -->
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <h3>Temperature Unit</h3>
+
+                        <p>
+                            Choose how temperature is displayed.
+                        </p>
+
+                    </div>
+
+
+                    <select id="temperatureUnit">
+
+                        <option value="celsius">
+                            Celsius (°C)
+                        </option>
+
+                        <option value="fahrenheit">
+                            Fahrenheit (°F)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="settings-divider"></div>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="settings-row">
+
+                    <div>
+
+                        <h3>Notifications</h3>
+
+                        <p>
+                            Receive weather, journey and risk updates.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="notificationsToggle"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-divider"></div>
+
+
+                <!-- CHANGE PASSWORD -->
+
+                <div class="settings-section">
+
+                    <div>
+
+                        <h3>Change Password</h3>
+
+                        <p>
+                            Create a new password for your Mausam account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="password-fields">
+
+                        <label for="newPassword">
+                            Enter New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter new password"
+                            autocomplete="new-password"
+                        >
+
+
+                        <label for="confirmPassword">
+                            Re-enter New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Re-enter new password"
+                            autocomplete="new-password"
+                        >
+
+
+                        <p
+                            id="passwordMessage"
+                            class="password-message"
+                        ></p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SAVE SETTINGS -->
+
+                <button
+                    class="save-profile-button"
+                    id="saveSettingsButton"
+                    type="button"
+                >
+                    Save Settings
+                </button>
+
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- SETTINGS JAVASCRIPT -->
+
+    <script src="language.js"></script>
+    <script>
+
+        const languageSelect =
+            document.getElementById("languageSelect");
+
+        const temperatureUnit =
+            document.getElementById("temperatureUnit");
+
+        const themeSelect =
+            document.getElementById("themeSelect");
+
+        const notificationsToggle =
+            document.getElementById("notificationsToggle");
+
+        const newPassword =
+            document.getElementById("newPassword");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const passwordMessage =
+            document.getElementById("passwordMessage");
+
+        const saveSettingsButton =
+            document.getElementById("saveSettingsButton");
+
+
+        /* =========================
+           LOAD SAVED SETTINGS
+           ========================= */
+
+        const savedLanguage =
+            localStorage.getItem("mausamLanguage") || "en";
+
+        const savedTemperatureUnit =
+            localStorage.getItem("mausamTemperatureUnit") || "celsius";
+
+        const savedTheme =
+            localStorage.getItem("mausamTheme") || "dark";
+
+        const savedNotifications =
+            localStorage.getItem("mausamNotifications");
+
+
+        languageSelect.value =
+            savedLanguage;
+
+        temperatureUnit.value =
+            savedTemperatureUnit;
+
+        themeSelect.value =
+            savedTheme;
+
+        themeSelect.addEventListener("change", function () {
+            document.documentElement.dataset.theme = this.value;
+            localStorage.setItem("mausamTheme", this.value);
+        });
+
+
+        if (savedNotifications !== null) {
+
+            notificationsToggle.checked =
+                savedNotifications === "true";
+
+        }
+
+
+        /* =========================
+           PASSWORD VALIDATION
+           ========================= */
+
+        function checkPasswords() {
+
+            const password =
+                newPassword.value;
+
+            const confirmation =
+                confirmPassword.value;
+
+
+            if (
+                password === "" &&
+                confirmation === ""
+            ) {
+
+                passwordMessage.textContent = "";
+
+                return true;
+
+            }
+
+
+            if (password.length < 8) {
+
+                passwordMessage.textContent =
+                    "Password must contain at least 8 characters.";
+
+                return false;
+
+            }
+
+
+            if (password !== confirmation) {
+
+                passwordMessage.textContent =
+                    "Passwords do not match.";
+
+                return false;
+
+            }
+
+
+            passwordMessage.textContent =
+                "Passwords match.";
+
+            return true;
+
+        }
+
+
+        newPassword.addEventListener(
+            "input",
+            checkPasswords
+        );
+
+
+        confirmPassword.addEventListener(
+            "input",
+            checkPasswords
+        );
+
+
+        /* =========================
+           SAVE SETTINGS
+           ========================= */
+
+        saveSettingsButton.addEventListener(
+            "click",
+            function () {
+
+                if (!checkPasswords()) {
+
+                    return;
+
+                }
+
+
+                localStorage.setItem(
+                    "mausamLanguage",
+                    languageSelect.value
+                );
+
+
+                localStorage.setItem(
+                    "mausamTemperatureUnit",
+                    temperatureUnit.value
+                );
+
+                localStorage.setItem(
+                    "mausamTheme",
+                    themeSelect.value
+                );
+
+                document.documentElement.dataset.theme =
+                    themeSelect.value;
+
+
+                localStorage.setItem(
+                    "mausamNotifications",
+                    notificationsToggle.checked
+                );
+
+
+                /*
+                 IMPORTANT:
+
+                 Do NOT store the actual password
+                 in localStorage.
+
+                 Real password encryption and authentication
+                 will be handled by the backend.
+                */
+
+
+                if (
+                    newPassword.value !== ""
+                ) {
+
+                    alert(window.MausamLanguage.translate(
+                        "Password details are ready for backend integration."
+                    ));
+
+                    newPassword.value = "";
+                    confirmPassword.value = "";
+                    passwordMessage.textContent = "";
+
+                } else {
+
+                    alert(window.MausamLanguage.translate(
+                        "Settings saved successfully."
+                    ));
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
