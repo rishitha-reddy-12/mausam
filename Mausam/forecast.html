@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Forecast | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item active"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="forecast-page">
+
+        <div class="forecast-container">
+
+            <!-- PAGE HEADING -->
+
+            <section class="forecast-heading">
+
+                <span>WEATHER FORECAST</span>
+
+                <h1>Plan ahead with confidence</h1>
+
+                <p>
+                    View upcoming weather conditions and understand
+                    how they may affect your plans.
+                </p>
+
+            </section>
+
+
+            <!-- LOCATION -->
+
+            <section class="forecast-location-card">
+
+                <div>
+
+                    <span>FORECAST LOCATION</span>
+
+                    <h2>Hyderabad</h2>
+
+                    <p>
+                        Saturday, September 5, 2026
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CURRENT SUMMARY -->
+
+            <section class="forecast-current-card">
+
+                <div>
+
+                    <span>CURRENT CONDITIONS</span>
+
+                    <h2>28°C</h2>
+
+                    <h3>Partly Cloudy</h3>
+
+                    <p>
+                        Feels like 30°C
+                    </p>
+
+                </div>
+
+
+                <div class="forecast-current-details">
+
+                    <div>
+                        <span>Humidity</span>
+                        <strong>72%</strong>
+                    </div>
+
+                    <div>
+                        <span>Wind</span>
+                        <strong>14 km/h</strong>
+                    </div>
+
+                    <div>
+                        <span>Rain</span>
+                        <strong>20%</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HOURLY FORECAST -->
+
+            <section class="forecast-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>HOURLY FORECAST</span>
+
+                        <h2>Next few hours</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hourly-forecast">
+
+                    <div class="hour-card">
+
+                        <span>5 PM</span>
+
+                        <strong>28°C</strong>
+
+                        <p>Cloudy</p>
+
+                        <small>20% rain</small>
+
+                    </div>
+
+
+                    <div class="hour-card">
+
+                        <span>6 PM</span>
+
+                        <strong>27°C</strong>
+
+                        <p>Rain</p>
+
+                        <small>60% rain</small>
+
+                    </div>
+
+
+                    <div class="hour-card">
+
+                        <span>7 PM</span>
+
+                        <strong>26°C</strong>
+
+                        <p>Rain</p>
+
+                        <small>70% rain</small>
+
+                    </div>
+
+
+                    <div class="hour-card">
+
+                        <span>8 PM</span>
+
+                        <strong>25°C</strong>
+
+                        <p>Cloudy</p>
+
+                        <small>40% rain</small>
+
+                    </div>
+
+
+                    <div class="hour-card">
+
+                        <span>9 PM</span>
+
+                        <strong>24°C</strong>
+
+                        <p>Cloudy</p>
+
+                        <small>30% rain</small>
+
+                    </div>
+
+
+                    <div class="hour-card">
+
+                        <span>10 PM</span>
+
+                        <strong>24°C</strong>
+
+                        <p>Clear</p>
+
+                        <small>10% rain</small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEVEN DAY FORECAST -->
+
+            <section class="forecast-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>7-DAY FORECAST</span>
+
+                        <h2>This week</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="daily-forecast">
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Sat</span>
+                            <strong>Today</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>28°C</strong>
+                            <span>22°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            40%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Sun</span>
+                            <strong>Sep 6</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>29°C</strong>
+                            <span>22°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            30%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Mon</span>
+                            <strong>Sep 7</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>27°C</strong>
+                            <span>21°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            60%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Tue</span>
+                            <strong>Sep 8</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>26°C</strong>
+                            <span>21°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            70%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Wed</span>
+                            <strong>Sep 9</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>28°C</strong>
+                            <span>22°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            40%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Thu</span>
+                            <strong>Sep 10</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>29°C</strong>
+                            <span>22°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            20%
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div>
+                            <span>Fri</span>
+                            <strong>Sep 11</strong>
+                        </div>
+
+                        <div class="day-weather">
+                            <strong>30°C</strong>
+                            <span>23°C</span>
+                        </div>
+
+                        <div class="rain-value">
+                            10%
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEATHER FACTORS -->
+
+            <section class="forecast-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>WEATHER FACTORS</span>
+
+                        <h2>What to keep in mind</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="weather-factor-grid">
+
+                    <div class="weather-factor-card">
+
+                        <span>HUMIDITY</span>
+
+                        <strong>72%</strong>
+
+                        <p>
+                            Moderately humid conditions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="weather-factor-card">
+
+                        <span>WIND</span>
+
+                        <strong>14 km/h</strong>
+
+                        <p>
+                            Light breeze expected.
+                        </p>
+
+                    </div>
+
+
+                    <div class="weather-factor-card">
+
+                        <span>UV INDEX</span>
+
+                        <strong>6</strong>
+
+                        <p>
+                            Protection recommended during
+                            prolonged outdoor activity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="weather-factor-card">
+
+                        <span>AIR QUALITY</span>
+
+                        <strong>Moderate</strong>
+
+                        <p>
+                            Sensitive individuals may want
+                            to reduce prolonged exposure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEATHER INSIGHT -->
+
+            <section class="forecast-insight-card">
+
+                <div class="insight-indicator">
+                    !
+                </div>
+
+                <div>
+
+                    <span>MAUSAM INSIGHT</span>
+
+                    <h3>
+                        Rain is more likely during the evening.
+                    </h3>
+
+                    <p>
+                        Consider planning outdoor activities
+                        earlier and keep rain protection available.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script src="forecast.js"></script>
+
+</body>
+
+</html>

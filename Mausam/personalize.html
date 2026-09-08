@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalize | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item active"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="personalize-page">
+
+        <div class="personalize-container">
+
+            <div class="personalize-header">
+
+                <div class="personalize-title">
+                    <span>MAUSAM</span>
+
+                    <h1>Personalize your weather</h1>
+
+                    <p>
+                        Choose what matters most to you.
+                        Mausam will customize your homepage accordingly.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <section class="persona-section">
+
+                <div class="persona-grid">
+
+                    <button class="persona-card" onclick="selectPersona('health')">
+                        <div class="persona-icon">+</div>
+                        <h2>Health-conscious user</h2>
+                        <p>AQI, pollen, UV index, humidity, allergy and skin-sensitivity information.</p>
+                    </button>
+
+                    <button class="persona-card" onclick="selectPersona('fitness')">
+                        <div class="persona-icon">↗</div>
+                        <h2>Outdoor fitness enthusiast</h2>
+                        <p>Running hours, sunrise, sunset, wind, UV and heat alerts.</p>
+                    </button>
+
+                    <button class="persona-card" onclick="selectPersona('outdoor')">
+                        <div class="persona-icon">⌁</div>
+                        <h2>Outdoor explorer</h2>
+                        <p>Sunlight, wind, heat and comfort guidance for outdoor plans.</p>
+                    </button>
+
+                    <button class="persona-card" onclick="selectPersona('beach')">
+                        <div class="persona-icon">≈</div>
+                        <h2>Beachgoer / Surfer</h2>
+                        <p>Tide timings, waves, sea conditions and water temperature.</p>
+                    </button>
+
+                    <button class="persona-card"
+                        onclick="selectPersona('traveler')">
+
+                        <div class="persona-icon persona-image-icon">
+                            <img src="assets/traveler.png" alt="Traveler">
+                        </div>
+
+                        <h2>Traveler</h2>
+
+                        <p>
+                            Destination weather, severe alerts,
+                            saved places and packing suggestions.
+                        </p>
+
+                    </button>
+
+
+                    <button class="persona-card"
+                        onclick="selectPersona('family')">
+
+                        <div class="persona-icon persona-image-icon">
+                            <img src="assets/family.png" alt="Family">
+                        </div>
+
+                        <h2>Parent / Family</h2>
+
+                        <p>
+                            School commute conditions,
+                            rain alerts and severe weather warnings.
+                        </p>
+
+                    </button>
+
+
+                    <button class="persona-card"
+                        onclick="selectPersona('farmer')">
+
+                        <div class="persona-icon persona-image-icon">
+                            <img src="assets/farmer.png" alt="Farmer">
+                        </div>
+
+                        <h2>Farmer / Gardener</h2>
+
+                        <p>
+                            Rainfall, soil moisture, frost alerts
+                            and planting guidance.
+                        </p>
+
+                    </button>
+
+
+                    <button class="persona-card"
+                        onclick="selectPersona('commuter')">
+
+                        <div class="persona-icon persona-image-icon">
+                            <img src="assets/commuter.png" alt="Commuter">
+                        </div>
+
+                        <h2>Commuter</h2>
+
+                        <p>
+                            Route weather, GPS, ETA, speed,
+                            traffic, visibility and storm alerts.
+                        </p>
+
+                    </button>
+
+                    <button class="persona-card" onclick="selectPersona('event')">
+                        <div class="persona-icon">□</div>
+                        <h2>Event planner</h2>
+                        <p>Extended forecasts, rain probability and outdoor comfort conditions.</p>
+                    </button>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script>
+
+        function selectPersona(persona) {
+
+            localStorage.setItem("mausamPersona", persona);
+
+            window.location.href = "dashboard.html";
+
+        }
+
+    </script>
+
+</body>
+</html>

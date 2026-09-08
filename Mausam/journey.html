@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Journey | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div>
+            <span>MAUSAM</span>
+        </div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item active"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="journey-page">
+
+        <div class="journey-container">
+
+            <!-- PAGE HEADING -->
+
+            <section class="journey-heading">
+
+                <span>PLAN YOUR JOURNEY</span>
+
+                <h1>Weather-aware travel</h1>
+
+                <p>
+                    Check weather conditions along your route
+                    before you start travelling.
+                </p>
+
+            </section>
+
+
+            <!-- ROUTE FORM -->
+
+            <section class="journey-card">
+
+                <div class="journey-input-row">
+
+                    <div class="journey-input-group">
+
+                        <label for="startLocation">
+                            Start location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="startLocation"
+                            placeholder="Enter starting place"
+                        >
+
+                    </div>
+
+
+                    <div class="route-arrow">
+                        →
+                    </div>
+
+
+                    <div class="journey-input-group">
+
+                        <label for="destination">
+                            Destination
+                        </label>
+
+                        <input
+                            type="text"
+                            id="destination"
+                            placeholder="Enter destination"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRANSPORT -->
+
+                <div class="transport-section">
+
+                    <label>
+                        Mode of transport
+                    </label>
+
+
+                    <div class="transport-options">
+
+                        <button
+                            class="transport-option active"
+                            data-transport="car"
+                            type="button"
+                        >
+                            Car
+                        </button>
+
+
+                        <button
+                            class="transport-option"
+                            data-transport="bus"
+                            type="button"
+                        >
+                            Bus
+                        </button>
+
+
+                        <button
+                            class="transport-option"
+                            data-transport="bike"
+                            type="button"
+                        >
+                            Bike
+                        </button>
+
+
+                        <button
+                            class="transport-option"
+                            data-transport="bicycle"
+                            type="button"
+                        >
+                            Bicycle
+                        </button>
+
+
+                        <button
+                            class="transport-option"
+                            data-transport="walking"
+                            type="button"
+                        >
+                            On foot
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- START JOURNEY -->
+
+                <button
+                    class="start-journey-button"
+                    id="startJourneyButton"
+                    type="button"
+                >
+                    Start Journey
+                </button>
+
+            </section>
+
+
+            <!-- JOURNEY RESULT -->
+
+            <section
+                class="journey-result"
+                id="journeyResult"
+            >
+
+                <!-- ROUTE SUMMARY -->
+
+                <div class="journey-summary-card">
+
+                    <div>
+
+                        <span class="journey-label">
+                            YOUR JOURNEY
+                        </span>
+
+                        <h2 id="routeTitle">
+                            Hyderabad → Shadnagar
+                        </h2>
+
+                        <p id="transportText">
+                            Car journey
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="gps-status"
+                        id="gpsStatus"
+                    >
+                        GPS ready
+                    </div>
+
+                    <button
+                        class="edit-location-button"
+                        id="editJourneyButton"
+                        type="button"
+                    >
+                        Edit locations
+                    </button>
+
+                </div>
+
+
+                <!-- MAP PLACEHOLDER -->
+
+                <div class="map-card">
+
+                    <div class="map-placeholder">
+
+                        <div class="map-route-line"></div>
+
+                        <div class="map-marker start-marker">
+                            A
+                        </div>
+
+                        <div class="map-marker destination-marker">
+                            B
+                        </div>
+
+                        <div class="map-label start-map-label">
+                            Start
+                        </div>
+
+                        <div class="map-label destination-map-label">
+                            Destination
+                        </div>
+
+                    </div>
+
+                    <div class="map-actions">
+                        <a
+                            class="google-maps-route-link"
+                            id="googleMapsRouteLink"
+                            href="https://www.google.com/maps"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-disabled="true"
+                        >
+                            Open route in Google Maps
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <!-- JOURNEY INFORMATION -->
+
+                <div class="journey-info-grid">
+
+                    <div class="journey-info-card">
+
+                        <span>
+                            DISTANCE
+                        </span>
+
+                        <strong id="distanceValue">
+                            45 km
+                        </strong>
+
+                    </div>
+
+
+                    <div class="journey-info-card">
+
+                        <span>
+                            EXPECTED TIME
+                        </span>
+
+                        <strong id="expectedTime">
+                            1 hr
+                        </strong>
+
+                    </div>
+
+
+                    <div class="journey-info-card">
+
+                        <span>
+                            EXPECTED SPEED
+                        </span>
+
+                        <strong id="expectedSpeed">
+                            40 km/h
+                        </strong>
+
+                    </div>
+
+
+                    <div class="journey-info-card">
+
+                        <span>
+                            CURRENT SPEED
+                        </span>
+
+                        <strong id="currentSpeed">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ETA -->
+
+                <div class="eta-card">
+
+                    <div>
+
+                        <span>
+                            ESTIMATED ARRIVAL
+                        </span>
+
+                        <h2 id="etaValue">
+                            5:45 PM
+                        </h2>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            GPS
+                        </span>
+
+                        <p id="locationStatus">
+                            Waiting for location permission
+                        </p>
+
+                        <a
+                            class="current-location-link"
+                            id="currentLocationMapsLink"
+                            href="https://www.google.com/maps"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-disabled="true"
+                        >
+                            View current location in Google Maps
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WEATHER ALONG ROUTE -->
+
+                <div class="route-weather-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                WEATHER ALONG ROUTE
+                            </span>
+
+                            <h2>
+                                Journey weather
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weather-timeline">
+
+                        <div class="timeline-item good-weather">
+
+                            <span>
+                                4:45 PM
+                            </span>
+
+                            <strong>
+                                Partly Cloudy
+                            </strong>
+
+                            <p>
+                                Good conditions
+                            </p>
+
+                        </div>
+
+
+                        <div class="timeline-item good-weather">
+
+                            <span>
+                                5:00 PM
+                            </span>
+
+                            <strong>
+                                Partly Cloudy
+                            </strong>
+
+                            <p>
+                                Good conditions
+                            </p>
+
+                        </div>
+
+
+                        <div class="timeline-item risk-weather">
+
+                            <span>
+                                6:00 PM
+                            </span>
+
+                            <strong>
+                                Rain expected
+                            </strong>
+
+                            <p>
+                                Take precautions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUDDEN RAIN WARNING -->
+
+                <div
+                    class="journey-warning"
+                    id="rainWarning"
+                >
+
+                    <div class="warning-icon">
+                        !
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            WEATHER ALERT
+                        </span>
+
+                        <h3>
+                            Rain may affect your journey
+                        </h3>
+
+                        <p>
+                            If rain starts while you are travelling,
+                            Mausam can suggest nearby places to stop
+                            and wait safely.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEARBY SAFE PLACES -->
+
+                <section class="nearby-stop-section">
+
+                    <div>
+
+                        <span>
+                            NEARBY SAFE PLACES
+                        </span>
+
+                        <h2>
+                            Places to stop and wait
+                        </h2>
+
+                    </div>
+
+
+                    <div class="nearby-stop-grid">
+
+                        <div class="stop-card">
+
+                            <strong>
+                                Hotel
+                            </strong>
+
+                            <p>
+                                Nearby hotel
+                            </p>
+
+                            <span>
+                                0.8 km
+                            </span>
+
+                        </div>
+
+
+                        <div class="stop-card">
+
+                            <strong>
+                                Bus Shelter
+                            </strong>
+
+                            <p>
+                                Covered waiting area
+                            </p>
+
+                            <span>
+                                1.1 km
+                            </span>
+
+                        </div>
+
+
+                        <div class="stop-card">
+
+                            <strong>
+                                Waiting Hall
+                            </strong>
+
+                            <p>
+                                Safe waiting location
+                            </p>
+
+                            <span>
+                                1.4 km
+                            </span>
+
+                        </div>
+
+
+                        <div class="stop-card">
+
+                            <strong>
+                                Park
+                            </strong>
+
+                            <p>
+                                Nearby public place
+                            </p>
+
+                            <span>
+                                1.7 km
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <dialog class="location-confirmation" id="locationConfirmation">
+        <form method="dialog">
+            <span class="journey-label">CONFIRM LOCATIONS</span>
+            <h2>Is this your route?</h2>
+            <p>
+                Confirm these locations before tracking your journey.
+            </p>
+
+            <div class="confirmed-locations">
+                <div>
+                    <span>START</span>
+                    <strong id="confirmStartLocation"></strong>
+                </div>
+                <div>
+                    <span>DESTINATION</span>
+                    <strong id="confirmDestination"></strong>
+                </div>
+            </div>
+
+            <div class="location-confirmation-actions">
+                <button class="edit-location-button" id="cancelLocationConfirmation" value="cancel" type="submit">
+                    Edit locations
+                </button>
+                <button class="confirm-location-button" id="confirmLocationButton" value="confirm" type="submit">
+                    Confirm and start
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+
+    <script src="language.js"></script>
+    <script src="journey.js"></script>
+
+</body>
+
+</html>

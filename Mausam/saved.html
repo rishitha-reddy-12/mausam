@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saved Places | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item active"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="saved-page">
+
+        <div class="saved-container">
+
+            <!-- HEADING -->
+
+            <section class="saved-heading">
+
+                <span>SAVED PLACES</span>
+
+                <h1>Your places</h1>
+
+                <p>
+                    Save locations you frequently visit
+                    for quick access to weather information.
+                </p>
+
+            </section>
+
+
+            <!-- ADD PLACE -->
+
+            <section class="add-place-card">
+
+                <div>
+
+                    <span>NEW SAVED PLACE</span>
+
+                    <h2>Add a location</h2>
+
+                    <p>
+                        Save a place to quickly check its
+                        weather and conditions later.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="addPlaceButton"
+                >
+                    Add Place
+                </button>
+
+            </section>
+
+
+            <!-- SAVED PLACES -->
+
+            <section class="saved-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>YOUR LOCATIONS</span>
+
+                        <h2>Saved places</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="saved-place-list"
+                    id="savedPlaceList"
+                >
+
+                    <!-- HOME -->
+
+                    <article class="saved-place-card">
+
+                        <div class="saved-place-icon">
+                            H
+                        </div>
+
+                        <div class="saved-place-info">
+
+                            <span>HOME</span>
+
+                            <h3>Home</h3>
+
+                            <p>
+                                Hyderabad
+                            </p>
+
+                            <small>
+                                Saved location
+                            </small>
+
+                        </div>
+
+                        <div class="saved-place-actions">
+
+                            <strong>
+                                2.4 km
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="remove-place"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- WORK -->
+
+                    <article class="saved-place-card">
+
+                        <div class="saved-place-icon">
+                            W
+                        </div>
+
+                        <div class="saved-place-info">
+
+                            <span>WORK</span>
+
+                            <h3>Work</h3>
+
+                            <p>
+                                Hyderabad
+                            </p>
+
+                            <small>
+                                Saved location
+                            </small>
+
+                        </div>
+
+                        <div class="saved-place-actions">
+
+                            <strong>
+                                5.8 km
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="remove-place"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- COLLEGE -->
+
+                    <article class="saved-place-card">
+
+                        <div class="saved-place-icon">
+                            C
+                        </div>
+
+                        <div class="saved-place-info">
+
+                            <span>FREQUENT</span>
+
+                            <h3>College</h3>
+
+                            <p>
+                                Hyderabad
+                            </p>
+
+                            <small>
+                                Saved location
+                            </small>
+
+                        </div>
+
+                        <div class="saved-place-actions">
+
+                            <strong>
+                                7.1 km
+                            </strong>
+
+                            <button
+                                type="button"
+                                class="remove-place"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- EMPTY STATE -->
+
+            <section
+                class="saved-empty-state"
+                id="savedEmptyState"
+            >
+
+                <div class="saved-empty-icon">
+                    +
+                </div>
+
+                <h2>No saved places</h2>
+
+                <p>
+                    Add locations that matter to you
+                    for faster weather access.
+                </p>
+
+                <button
+                    type="button"
+                    onclick="document.getElementById('addPlaceButton').click()"
+                >
+                    Add your first place
+                </button>
+
+            </section>
+
+
+            <!-- INFORMATION -->
+
+            <section class="saved-information-card">
+
+                <div class="saved-information-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <span>SAVED LOCATION BENEFIT</span>
+
+                    <h2>
+                        Get weather information faster
+                    </h2>
+
+                    <p>
+                        Saved places can later be connected
+                        to live weather data, maps and
+                        personalized alerts.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script src="saved.js"></script>
+
+</body>
+
+</html>

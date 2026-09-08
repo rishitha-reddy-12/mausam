@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nearby | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item active"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="nearby-page">
+
+        <div class="nearby-container">
+
+            <section class="nearby-heading">
+
+                <span>NEARBY</span>
+
+                <h1>Places around you</h1>
+
+                <p>
+                    Find useful and weather-relevant places
+                    near your current location.
+                </p>
+
+            </section>
+
+
+            <!-- LOCATION STATUS -->
+
+            <section class="nearby-location-card">
+
+                <div>
+
+                    <span>YOUR LOCATION</span>
+
+                    <h2 id="currentLocation">
+                        Detecting location...
+                    </h2>
+
+                    <p id="locationStatus">
+                        Allow location access to find nearby places.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="detectLocationButton"
+                >
+                    Use Current Location
+                </button>
+
+            </section>
+
+
+            <!-- CATEGORY FILTER -->
+
+            <section class="nearby-filter-card">
+
+                <span>FIND A PLACE</span>
+
+                <div class="nearby-filter-options">
+
+                    <button
+                        class="nearby-filter active"
+                        data-category="all"
+                        type="button"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="nearby-filter"
+                        data-category="hospital"
+                        type="button"
+                    >
+                        Hospitals
+                    </button>
+
+                    <button
+                        class="nearby-filter"
+                        data-category="shelter"
+                        type="button"
+                    >
+                        Shelters
+                    </button>
+
+                    <button
+                        class="nearby-filter"
+                        data-category="fuel"
+                        type="button"
+                    >
+                        Fuel
+                    </button>
+
+                    <button
+                        class="nearby-filter"
+                        data-category="pharmacy"
+                        type="button"
+                    >
+                        Pharmacies
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- MAP -->
+
+            <section class="nearby-map-card">
+
+                <div class="nearby-map-placeholder">
+
+                    <div class="nearby-map-route"></div>
+
+                    <div class="nearby-map-center">
+                        You
+                    </div>
+
+                    <div class="nearby-place-marker marker-one">
+                        +
+                    </div>
+
+                    <div class="nearby-place-marker marker-two">
+                        +
+                    </div>
+
+                    <div class="nearby-place-marker marker-three">
+                        +
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NEARBY RESULTS -->
+
+            <section class="nearby-results-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>NEARBY RESULTS</span>
+
+                        <h2>Useful places near you</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="nearby-results"
+                    id="nearbyResults"
+                >
+
+                    <article
+                        class="nearby-place-card"
+                        data-category="hospital"
+                    >
+
+                        <div class="nearby-place-icon">
+                            H
+                        </div>
+
+                        <div class="nearby-place-content">
+
+                            <span>HOSPITAL</span>
+
+                            <h3>
+                                Nearby General Hospital
+                            </h3>
+
+                            <p>
+                                Medical assistance available.
+                            </p>
+
+                            <strong>
+                                1.2 km away
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="nearby-place-card"
+                        data-category="shelter"
+                    >
+
+                        <div class="nearby-place-icon">
+                            S
+                        </div>
+
+                        <div class="nearby-place-content">
+
+                            <span>SHELTER</span>
+
+                            <h3>
+                                Covered Waiting Area
+                            </h3>
+
+                            <p>
+                                Useful during rain or extreme weather.
+                            </p>
+
+                            <strong>
+                                0.8 km away
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="nearby-place-card"
+                        data-category="fuel"
+                    >
+
+                        <div class="nearby-place-icon">
+                            F
+                        </div>
+
+                        <div class="nearby-place-content">
+
+                            <span>FUEL</span>
+
+                            <h3>
+                                Nearby Fuel Station
+                            </h3>
+
+                            <p>
+                                Fuel and basic travel facilities.
+                            </p>
+
+                            <strong>
+                                1.6 km away
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="nearby-place-card"
+                        data-category="pharmacy"
+                    >
+
+                        <div class="nearby-place-icon">
+                            P
+                        </div>
+
+                        <div class="nearby-place-content">
+
+                            <span>PHARMACY</span>
+
+                            <h3>
+                                Nearby Pharmacy
+                            </h3>
+
+                            <p>
+                                Medicines and basic healthcare items.
+                            </p>
+
+                            <strong>
+                                1.9 km away
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEATHER SAFETY -->
+
+            <section class="nearby-safety-card">
+
+                <div class="nearby-safety-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <span>WEATHER SAFETY</span>
+
+                    <h2>
+                        Need somewhere safe to wait?
+                    </h2>
+
+                    <p>
+                        During heavy rain or severe weather,
+                        Mausam can help identify nearby
+                        suitable places to stop.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script src="nearby.js"></script>
+
+</body>
+
+</html>

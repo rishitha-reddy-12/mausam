@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Profile | Mausam</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div><span>MAUSAM</span></div>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">⌂</span><span>Home</span></a>
+            <a href="journey.html" class="nav-item"><span class="nav-icon">↗</span><span>Journey</span></a>
+            <a href="forecast.html" class="nav-item"><span class="nav-icon">▤</span><span>Forecast</span></a>
+            <a href="alerts.html" class="nav-item"><span class="nav-icon">!</span><span>Alerts</span></a>
+            <a href="nearby.html" class="nav-item"><span class="nav-icon">⌖</span><span>Nearby</span></a>
+            <a href="saved.html" class="nav-item"><span class="nav-icon">☆</span><span>Saved Places</span></a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item active"><span class="nav-icon">⚙</span><span>Settings</span></a>
+            <a href="personalize.html" class="nav-item"><span class="nav-icon">◉</span><span>Personalize</span></a>
+            <a href="index.html" class="logout-button"><span class="nav-icon">↪</span><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="profile-page">
+
+        <div class="profile-page-container">
+
+            <!-- PROFILE CARD -->
+
+            <section class="profile-edit-card">
+
+                <div class="profile-page-heading">
+
+                    <span>ACCOUNT</span>
+
+                    <h1>Edit Profile</h1>
+
+                    <p>
+                        Manage your Mausam profile information.
+                    </p>
+
+                </div>
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="profile-photo-section">
+
+                    <div
+                        class="large-profile-avatar"
+                        id="profileAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="photo-actions">
+
+                        <h3>Profile photo</h3>
+
+                        <p>
+                            Add a photo to personalize your profile.
+                        </p>
+
+                        <label
+                            for="photoInput"
+                            class="upload-photo-button"
+                        >
+                            Choose Photo
+                        </label>
+
+                        <input
+                            type="file"
+                            id="photoInput"
+                            accept="image/*"
+                            hidden
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE FORM -->
+
+                <form id="profileForm">
+
+                    <div class="profile-input-group">
+
+                        <label for="fullName">
+                            Full name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="profile-input-group">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="profile-input-group">
+
+                        <label for="phone">
+                            Phone number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="save-profile-button"
+                    >
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="language.js"></script>
+    <script>
+
+        /* =========================
+           PROFILE PHOTO
+           ========================= */
+
+        const photoInput =
+            document.getElementById("photoInput");
+
+        const profileAvatar =
+            document.getElementById("profileAvatar");
+
+
+        photoInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (!file) {
+                return;
+            }
+
+
+            const reader = new FileReader();
+
+
+            reader.onload = function (event) {
+
+                profileAvatar.style.backgroundImage =
+                    `url(${event.target.result})`;
+
+                profileAvatar.style.backgroundSize =
+                    "cover";
+
+                profileAvatar.style.backgroundPosition =
+                    "center";
+
+                profileAvatar.textContent = "";
+
+            };
+
+
+            reader.readAsDataURL(file);
+
+        });
+
+
+        /* =========================
+           LOAD EXISTING PROFILE
+           ========================= */
+
+        const savedName =
+            localStorage.getItem("mausamUserName");
+
+        const savedEmail =
+            localStorage.getItem("mausamUserEmail");
+
+
+        if (savedName) {
+
+            document.getElementById("fullName").value =
+                savedName;
+
+        }
+
+
+        if (savedEmail) {
+
+            document.getElementById("email").value =
+                savedEmail;
+
+        }
+
+
+        /* =========================
+           SAVE PROFILE
+           ========================= */
+
+        document
+            .getElementById("profileForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("fullName").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+
+                localStorage.setItem(
+                    "mausamUserName",
+                    name
+                );
+
+                localStorage.setItem(
+                    "mausamUserEmail",
+                    email
+                );
+
+                localStorage.setItem(
+                    "mausamUserPhone",
+                    phone
+                );
+
+
+                alert(window.MausamLanguage.translate("Profile updated successfully."));
+
+
+                window.location.href =
+                    "dashboard.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

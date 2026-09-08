@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mausam | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- =========================
+             SIDEBAR
+             ========================= -->
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo"><img src="assets/mausam-logo.png" alt="MAUSAM"></div>
+                <span>MAUSAM</span>
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="nav-icon">⌂</span>
+                    <span>Home</span>
+                </a>
+                <a href="journey.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Journey</span>
+                </a>
+                <a href="forecast.html" class="nav-item">
+                    <span class="nav-icon">▤</span>
+                    <span>Forecast</span>
+                </a>
+                <a href="alerts.html" class="nav-item">
+                    <span class="nav-icon">!</span>
+                    <span>Alerts</span>
+                </a>
+                <a href="nearby.html" class="nav-item">
+                    <span class="nav-icon">⌖</span>
+                    <span>Nearby</span>
+                </a>
+                <a href="saved.html" class="nav-item">
+                    <span class="nav-icon">☆</span>
+                    <span>Saved Places</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+                <a href="personalize.html" class="nav-item">
+                    <span class="nav-icon">◉</span>
+                    <span>Personalize</span>
+                </a>
+                <a href="index.html" class="logout-button">
+                    <span class="nav-icon">↪</span>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+             ========================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="welcome-text">Good afternoon</p>
+                    <h2>Your weather overview</h2>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button
+                        class="voice-assistant-button"
+                        id="voiceAssistantButton"
+                        type="button"
+                        title="Voice assistant"
+                        aria-label="Voice assistant"
+                    >
+                        🎙
+                    </button>
+
+                    <span id="voiceAssistantStatus" class="voice-assistant-status" aria-live="polite"></span>
+
+
+                    <!-- NOTIFICATION -->
+
+                    <button
+                        class="notification-button"
+                        type="button"
+                        title="Notifications"
+                    >
+                        !
+                    </button>
+
+
+                    <!-- PROFILE -->
+
+                    <div class="profile-menu-container">
+
+                        <button
+                            class="profile-button"
+                            id="profileButton"
+                            type="button"
+                            title="Profile"
+                        >
+                            <span>U</span>
+                        </button>
+
+
+                        <!-- PROFILE DROPDOWN -->
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                        >
+
+
+                            <!-- PROFILE HEADER -->
+
+                            <div class="profile-header">
+
+                                <div class="profile-avatar">
+                                    U
+                                </div>
+
+
+                                <div class="profile-user-details">
+
+                                    <strong id="profileName">
+                                        User
+                                    </strong>
+
+                                    <p id="profileEmail">
+                                        user@example.com
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-divider"></div>
+
+
+                            <!-- PROFILE OPTIONS -->
+
+                            <button
+                                class="profile-option"
+                                type="button"
+                                id="editProfileButton"
+                            >
+                                Edit Profile
+                            </button>
+
+
+                            <button
+                                class="profile-option"
+                                type="button"
+                                id="profilePhotoButton"
+                            >
+                                Profile Photo
+                            </button>
+
+
+                            <button
+                                class="profile-option"
+                                type="button"
+                                id="changePasswordButton"
+                            >
+                                Change Password
+                            </button>
+
+
+                            <div class="profile-divider"></div>
+
+
+                            <button
+                                class="profile-option sign-out"
+                                type="button"
+                                id="signOutButton"
+                            >
+                                Sign Out
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 LOCATION
+                 ========================= -->
+
+            <section class="location-section">
+
+                <div>
+
+                    <span class="location-label">
+                        CURRENT LOCATION
+                    </span>
+
+
+                    <h3>
+                        Hyderabad
+                    </h3>
+
+
+                    <p>
+                        Today, Saturday, September 5
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 MAIN WEATHER CARD
+                 ========================= -->
+
+            <section class="weather-main-card">
+
+
+                <div class="weather-information">
+
+                    <span class="weather-status">
+                        CURRENT WEATHER
+                    </span>
+
+
+                    <h1>
+                        28°
+                    </h1>
+
+
+                    <h3>
+                        Partly Cloudy
+                    </h3>
+
+
+                    <p>
+                        Feels like 30°
+                    </p>
+
+                </div>
+
+
+                <!-- WEATHER VISUAL -->
+
+                <div class="weather-animation">
+
+                    <div class="sun"></div>
+
+                    <div class="cloud"></div>
+
+                </div>
+
+            </section>
+
+            <section class="dashboard-forecast-panel">
+                <div class="dashboard-section-head">
+                    <div class="dashboard-tabs" role="tablist" aria-label="Forecast range">
+                        <button class="dashboard-tab active" type="button" role="tab" aria-selected="true">Today</button>
+                        <button class="dashboard-tab" type="button" role="tab" aria-selected="false">Tomorrow</button>
+                        <button class="dashboard-tab" type="button" role="tab" aria-selected="false">Next 7 days</button>
+                    </div>
+                    <div class="forecast-mode" aria-label="Forecast mode">
+                        <button class="forecast-mode-button active" type="button">Forecast</button>
+                        <button class="forecast-mode-button" type="button">Air quality</button>
+                    </div>
+                </div>
+
+                <div class="forecast-dashboard-grid">
+                    <div class="forecast-days" aria-label="Seven day forecast">
+                        <article class="forecast-day selected">
+                            <span>Monday</span><small>11:42 PM</small><strong>16°</strong><i class="weather-symbol sun-symbol">☀</i><p>Real feel 18°<br>Wind NE 5.8 km/h</p>
+                        </article>
+                        <article class="forecast-day"><span>Tue</span><strong>10°</strong><i class="weather-symbol">🌤</i><p>Partly cloudy</p></article>
+                        <article class="forecast-day"><span>Wed</span><strong>15°</strong><i class="weather-symbol">🌤</i><p>Partly cloudy</p></article>
+                        <article class="forecast-day"><span>Thu</span><strong>11°</strong><i class="weather-symbol">🌤</i><p>Cloudy</p></article>
+                        <article class="forecast-day"><span>Fri</span><strong>18°</strong><i class="weather-symbol">🌤</i><p>Mostly clear</p></article>
+                        <article class="forecast-day"><span>Sat</span><strong>12°</strong><i class="weather-symbol">🌧</i><p>Light rain</p></article>
+                        <article class="forecast-day"><span>Sun</span><strong>10°</strong><i class="weather-symbol">🌧</i><p>Rain expected</p></article>
+                    </div>
+
+                    <div class="rain-chart-card">
+                        <div class="chart-title"><span>Chance of rain</span><strong>35%</strong></div>
+                        <div class="rain-chart" aria-label="Rain chance by hour">
+                            <div class="chart-grid-lines"><span></span><span></span><span></span></div>
+                            <div class="rain-bars"><i style="height: 36%"></i><i style="height: 52%"></i><i style="height: 78%"></i><i style="height: 44%"></i><i style="height: 70%"></i><i style="height: 30%"></i></div>
+                            <div class="chart-labels"><span>10AM</span><span>11AM</span><span>12PM</span><span>01PM</span><span>02PM</span><span>03PM</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- =========================
+                 RISK STATUS
+                 ========================= -->
+
+            <section
+                class="risk-card good"
+                id="riskCard"
+            >
+
+                <div class="risk-indicator">
+                    ✓
+                </div>
+
+
+                <div>
+
+                    <span>
+                        WEATHER STATUS
+                    </span>
+
+
+                    <h3 id="riskTitle">
+                        Good conditions
+                    </h3>
+
+
+                    <p id="riskMessage">
+                        Current weather conditions are suitable
+                        for your selected activity.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section class="dashboard-explorer-grid">
+                <div class="dashboard-map-panel">
+                    <div class="dashboard-section-head">
+                        <div>
+                            <span class="dashboard-eyebrow">GLOBAL MAP</span>
+                            <h2>Weather around the world</h2>
+                        </div>
+                        <button class="map-view-button" type="button" onclick="window.location.href='nearby.html'">View wide <span>↗</span></button>
+                    </div>
+                    <div class="weather-world-map" role="img" aria-label="Stylized global weather map">
+                        <span class="map-weather-pin pin-one">☀</span><span class="map-weather-pin pin-two">☁</span><span class="map-weather-pin pin-three">☀</span><span class="map-weather-pin pin-four">✦</span><span class="map-weather-pin pin-five">☁</span>
+                        <span class="map-city-label">Hyderabad</span>
+                        <button class="map-zoom-button zoom-in" type="button" aria-label="Zoom in">+</button>
+                        <button class="map-zoom-button zoom-out" type="button" aria-label="Zoom out">−</button>
+                        <div class="map-callout"><strong>Explore the global map</strong><span>Wind, weather and ocean conditions.</span><button type="button" onclick="window.location.href='nearby.html'">Get started</button></div>
+                    </div>
+                </div>
+
+                <aside class="city-watch-panel">
+                    <div class="dashboard-section-head"><div><span class="dashboard-eyebrow">OTHER LARGE CITIES</span><h2>World watch</h2></div><button class="show-all-button" type="button" onclick="window.location.href='saved.html'">Show all ›</button></div>
+                    <div class="city-watch-list">
+                        <article class="city-watch-card"><div><small>India</small><strong>Hyderabad</strong><span>Mostly sunny</span></div><div><i>🌤</i><b>28°</b></div></article>
+                        <article class="city-watch-card"><div><small>United Kingdom</small><strong>London</strong><span>Cloudy</span></div><div><i>☁</i><b>18°</b></div></article>
+                        <article class="city-watch-card"><div><small>Australia</small><strong>Melbourne</strong><span>Sunny</span></div><div><i>☀</i><b>22°</b></div></article>
+                    </div>
+                </aside>
+            </section>
+
+
+            <!-- =========================
+                 PERSONALIZED INFORMATION
+                 ========================= -->
+
+            <section class="personalized-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            PERSONALIZED FOR YOU
+                        </span>
+
+
+                        <h2 id="personaName">
+                            Commuter
+                        </h2>
+
+
+                        <p id="personaSubtitle">
+                            Journey, route & traffic conditions
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="change-persona"
+                        type="button"
+                        onclick="window.location.href='personalize.html'"
+                    >
+                        Change user type
+                    </button>
+
+                </div>
+
+
+                <!--
+                    dashboard.js will automatically
+                    insert the correct cards here
+                    according to the selected persona.
+                -->
+
+                <div
+                    class="information-grid"
+                    id="informationGrid"
+                >
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+         ========================= -->
+
+    <script src="language.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="voice.js"></script>
+
+
+    <!-- =========================
+         PROFILE MENU JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+        const profileButton =
+            document.getElementById("profileButton");
+
+        const profileDropdown =
+            document.getElementById("profileDropdown");
+
+
+        /* Open / close profile menu */
+
+        profileButton.addEventListener("click", function(event) {
+
+            event.stopPropagation();
+
+            profileDropdown.classList.toggle("show");
+
+        });
+
+
+        /* Close when clicking outside */
+
+        document.addEventListener("click", function() {
+
+            profileDropdown.classList.remove("show");
+
+        });
+
+
+        /* Prevent clicks inside menu from closing it immediately */
+
+        profileDropdown.addEventListener("click", function(event) {
+
+            event.stopPropagation();
+
+        });
+
+
+        /* Edit Profile */
+
+        document
+            .getElementById("editProfileButton")
+            .addEventListener("click", function() {
+
+                window.location.href = "edit-profile.html";
+
+            });
+
+
+        /* Profile Photo */
+
+        document
+            .getElementById("profilePhotoButton")
+            .addEventListener("click", function() {
+
+                alert(window.MausamLanguage.translate("Profile photo upload will be available here."));
+
+            });
+
+
+        /* Change Password */
+
+        document
+    .getElementById("changePasswordButton")
+    .addEventListener("click", function() {
+
+        window.location.href = "change-password.html";
+
+    });
+
+
+        /* Sign Out */
+
+        document
+            .getElementById("signOutButton")
+            .addEventListener("click", function() {
+
+                localStorage.removeItem("mausamPersona");
+
+                window.location.href = "login.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>
