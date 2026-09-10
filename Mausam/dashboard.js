@@ -190,7 +190,7 @@ function loadPersona() {
 }
 
 
-loadPersona();
+;
 
 document.querySelectorAll(".dashboard-tab").forEach(function (tab) {
     tab.addEventListener("click", function () {
@@ -249,5 +249,113 @@ function logoutUser() {
        handle the real logout/session.
     */
 
-    window.location.href = "index.html";
+   window.location.href = "index.html";
 }
+async function loadWeatherFromBackend() {
+
+    if (!navigator.geolocation) {
+        console.log("Geolocation is not supported.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        async function (position) {
+
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            const selectedPersona =
+                localStorage.getItem("mausamPersona") || "outdoor";
+
+            console.log("Latitude:", latitude);
+            console.log("Longitude:", longitude);
+            console.log("Persona:", selectedPersona);
+            const locationElement = document.getElementById("currentLocation");
+
+try {
+    const locationResponse = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+    );
+
+    console.log("Location API responded");
+
+    const locationData = await locationResponse.json();
+
+    console.log("Location data:", locationData);
+
+    const address = locationData.address;
+
+    const city =
+        address.city ||
+        address.town ||
+        address.village ||
+        address.suburb ||
+        "Unknown location";
+
+    locationElement.textContent = city;
+
+} catch (error) {
+    console.error("Location name error:", error);
+}
+
+            const url =
+                `http://127.0.0.1:8001/weather?latitude=${latitude}&longitude=${longitude}&profile=${selectedPersona}`;
+
+            try {
+
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error("Backend request failed");
+                }
+
+                const weather = await response.json();
+                document.getElementById("riskMessage").textContent =
+    weather.recommendation;
+    
+   
+
+                document.getElementById("currentTemperature").textContent =
+    `${Math.round(weather.temperature)}°`;
+                document.getElementById("rainProbability").textContent =
+    `${Math.round(weather.precipitation_probability)}%`;
+
+   let condition = "Unknown";
+
+if (weather.weather_code === 0) {
+    condition = "Clear";
+} else if ([1, 2, 3].includes(weather.weather_code)) {
+    condition = "Partly Cloudy";
+} else if ([51, 53, 55, 61, 63, 65].includes(weather.weather_code)) {
+    condition = "Rain";
+} else if ([71, 73, 75, 77].includes(weather.weather_code)) {
+    condition = "Snow";
+} else if ([95, 96, 99].includes(weather.weather_code)) {
+    condition = "Thunderstorm";
+}
+
+document.getElementById("weatherCondition").textContent = condition;
+
+            } catch (error) {
+
+                console.error("Weather API error:", error);
+
+            }
+        },
+
+        function (error) {
+
+            console.error("Location error:", error);
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            maximumAge: 30000,
+            timeout: 10000
+        }
+    );
+}
+
+loadPersona();
+loadWeatherFromBackend();

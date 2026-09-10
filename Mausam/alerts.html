@@ -68,8 +68,8 @@
 
                 <div class="alert-summary-item">
 
-                    <strong>
-                        1
+                    <strong id="highPriorityCount">
+                            0
                     </strong>
 
                     <span>
@@ -81,12 +81,12 @@
 
                 <div class="alert-summary-item">
 
-                    <strong>
-                        1
+                    <strong id="advisoryCount">
+                             0
                     </strong>
 
                     <span>
-                        Advisory
+                            Advisory
                     </span>
 
                 </div>
@@ -111,110 +111,11 @@
                 </div>
 
 
-                <!-- HIGH PRIORITY ALERT -->
+               
 
-                <article class="alert-card high-alert">
-
-                    <div class="alert-card-icon">
-                        !
-                    </div>
-
-
-                    <div class="alert-card-content">
-
-                        <div class="alert-card-top">
-
-                            <span class="alert-priority">
-                                HIGH PRIORITY
-                            </span>
-
-                            <span class="alert-time">
-                                Updated 10 min ago
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Heavy rain expected
-                        </h3>
-
-
-                        <p>
-                            Rain may become intense in your area
-                            during the evening. Travel carefully
-                            and avoid waterlogged roads.
-                        </p>
-
-
-                        <div class="alert-details">
-
-                            <span>
-                                Rain probability: 70%
-                            </span>
-
-                            <span>
-                                Expected: 6 PM – 8 PM
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ADVISORY ALERT -->
-
-                <article class="alert-card advisory-alert">
-
-                    <div class="alert-card-icon">
-                        i
-                    </div>
-
-
-                    <div class="alert-card-content">
-
-                        <div class="alert-card-top">
-
-                            <span class="alert-priority">
-                                ADVISORY
-                            </span>
-
-                            <span class="alert-time">
-                                Updated 25 min ago
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            High humidity
-                        </h3>
-
-
-                        <p>
-                            Humidity is expected to remain high.
-                            Outdoor activities may feel more
-                            uncomfortable than usual.
-                        </p>
-
-
-                        <div class="alert-details">
-
-                            <span>
-                                Humidity: 78%
-                            </span>
-
-                            <span>
-                                Valid: Today
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </article>
+               <div id="alertsContainer">
+    <p>No active weather alerts.</p>
+</div>
 
             </section>
 
@@ -236,37 +137,25 @@
                 </div>
 
 
-                <div class="personalized-alert-card">
+               <div class="personalized-alert-card">
 
-                    <div>
+    <div>
+        <span>COMMUTER</span>
 
-                        <span>
-                            COMMUTER
-                        </span>
+        <h3>Weather conditions look good for outdoor activities</h3>
 
-                        <h3>
-                            Rain may affect your evening journey
-                        </h3>
+        <p>
+            Consider starting earlier or keeping
+            an alternate route available.
+        </p>
+    </div>
 
-                        <p>
-                            Consider starting earlier or keeping
-                            an alternate route available.
-                        </p>
+    <button type="button" onclick="window.location.href='journey.html'">
+        View Journey
+    </button>
 
-                    </div>
-
-
-                    <button
-                        type="button"
-                        onclick="window.location.href='journey.html'"
-                    >
-                        View Journey
-                    </button>
-
-                </div>
-
-            </section>
-
+</div>
+</section>
 
             <!-- NOTIFICATION HISTORY -->
 
