@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login | Mausam</title>
+    <title>Mausam</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,98 +13,30 @@
 
     <main class="login-page">
 
-        <div class="login-language-control">
-            <span class="language-icon" aria-hidden="true">文A</span>
-            <select id="language" aria-label="Language">
-                <option value="en">English</option>
-                <option value="te">తెలుగు</option>
-                <option value="hi">हिन्दీ</option>
-            </select>
-        </div>
-
         <section class="login-card">
 
             <div class="login-logo">
                 <img src="assets/mausam-logo.png" alt="MAUSAM">
             </div>
 
-            <h1>Welcome.</h1>
+            <h1>Welcome to Mausam</h1>
 
             <p class="login-subtitle">
                 Weather that understands your needs.
             </p>
 
-            <form id="loginForm">
-
-                <div class="input-group">
-                    <label for="email">Email</label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        required
-                    >
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter your password"
-                        required
-                    >
-                </div>
-
-                <div class="login-options">
-
-                    <label class="remember-me">
-                        <input type="checkbox">
-                        Remember me
-                    </label>
-
-                    <button type="button" class="forgot-password">
-                        Forgot password?
-                    </button>
-
-                </div>
-
-                <button type="submit" class="login-button">
-                    Login
-                </button>
-
-            </form>
-
-            <div class="divider">
-                <span>OR</span>
-            </div>
-
-            <button class="google-button" id="googleLoginButton" type="button">
-                <span class="google-icon">G</span>
-                Continue with Google
+            <button class="login-button" type="button" onclick="continueToMausam()">
+                Continue to Mausam
             </button>
 
         </section>
 
     </main>
 
-    <script src="language.js"></script>
     <script>
-        document.getElementById("googleLoginButton").addEventListener("click", function() {
-            alert(window.MausamLanguage.translate("Google sign-in will be available when authentication is connected."));
-        });
-
-        document.querySelector(".forgot-password").addEventListener("click", function() {
-            alert(window.MausamLanguage.translate("Password recovery will be available when authentication is connected."));
-        });
-
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
+        function continueToMausam() {
             window.location.href = "dashboard.html";
-        });
+        }
     </script>
 
 </body>
