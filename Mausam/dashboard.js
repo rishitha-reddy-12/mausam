@@ -299,7 +299,7 @@ try {
 }
 
             const url =
-                `http://127.0.0.1:8001/weather?latitude=${latitude}&longitude=${longitude}&profile=${selectedPersona}`;
+    `https://mausam-sy54.onrender.com/weather?latitude=${latitude}&longitude=${longitude}&profile=${selectedPersona}`;
 
             try {
 
